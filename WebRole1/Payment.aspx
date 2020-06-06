@@ -33,13 +33,13 @@
             
             <div style="margin:10px;padding:10px">
                 <span style="margin-top:5px; margin-left:30px">
-                    <asp:Label ID="Sumtopay" runat="server" ></asp:Label>
+                 <asp:Label ID="SumToPay" runat="server" Text="0" Width="150px" BackColor="Wheat"></asp:Label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 SEK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </span>
             </div>
             <div style="margin:10px;padding:10px">
-                <asp:Button runat="server" Text="PAY" Width="100%" OnClick="Unnamed3_Click"/>
+                <asp:Button runat="server" Text="PAY" Width="100%" />
             </div>
     </div>
     </form>

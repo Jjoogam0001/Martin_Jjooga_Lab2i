@@ -17,16 +17,6 @@ namespace WebRole1
         private string accountKey = "arqVSiIar1LFWYdToGh47gQ9+LkqnwUBf0T31y5oFQ1FjEv+oW5uqLKh9i9ia1f4kyWZtJO4zO4Aqgjr6/agrw==";
 
         private string flightCost, hotelCost, carRentCost;
-
-        protected void Unnamed3_Click(object sender, EventArgs e)
-        {
-
-          
-
-
-
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             StorageCredentials creds = new StorageCredentials(accountName, accountKey);
@@ -38,13 +28,8 @@ namespace WebRole1
             CloudQueue queue2 = queueClient.GetQueueReference("hotelwebqueue");
             CloudQueue queue3 = queueClient.GetQueueReference("carwebqueue");
 
-
-
             try
             {
-
-
-
                 // Create the queue if it doesn't already exist
                 queue1.CreateIfNotExists();
                 queue2.CreateIfNotExists();
@@ -59,7 +44,6 @@ namespace WebRole1
                 { // Display message (populate the textbox with the message you just retrieved.
 
                     flightCost = readMessage1.AsString;
-                    
 
                     //Delete the message just read to avoid reading it over and over again
                     queue1.DeleteMessage(queue1.GetMessage());
@@ -68,7 +52,6 @@ namespace WebRole1
                 { // Display message (populate the textbox with the message you just retrieved.
 
                     hotelCost = readMessage2.AsString;
-                  
 
                     //Delete the message just read to avoid reading it over and over again
                     queue2.DeleteMessage(queue2.GetMessage());
@@ -77,26 +60,19 @@ namespace WebRole1
                 { // Display message (populate the textbox with the message you just retrieved.
 
                     carRentCost = readMessage3.AsString;
-                  
-
-
-
 
                     //Delete the message just read to avoid reading it over and over again
                     queue3.DeleteMessage(queue3.GetMessage());
                 }
 
                 double totalCost = double.Parse(flightCost) + double.Parse(hotelCost) + double.Parse(carRentCost);
-                Sumtopay.Text = totalCost.ToString();
-
-
+                SumToPay.Text = totalCost + " SEK";
 
             }
             catch (Exception ee)
             {
                 Debug.WriteLine("Problem reading from queue");
             }
-
 
         }
     }
